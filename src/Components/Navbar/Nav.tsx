@@ -19,7 +19,7 @@ const Navbar = () => {
         <li>
           <Link to="/cart">Cart</Link>
         </li>
-        {localStorage.getItem("token") != null ? (
+        {localStorage.getItem("access") != null ? (
           <li>
             <Link to="/login-register">Logout</Link>
           </li>

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import axios from "axios";
 import Navbar from "../Navbar/Nav";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../AuthContext";
 
 const Login = () => {
   const [option, setOption] = useState(false);
@@ -10,9 +10,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [authToken, setAuthToken] = useState<string | null>(
-    localStorage.getItem("token")
-  );
+  const { accessToken, login, signup, logout } = useAuth();
   const navigate = useNavigate();
 
   const handleToggleOption = (
@@ -21,47 +19,24 @@ const Login = () => {
     e.preventDefault();
     setOption(!option);
   };
+
   const handleLogout = () => {
-    localStorage.clear();
-    setAuthToken(null);
-    console.log(authToken);
+    logout();
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    try {
-      if (option) {
-        const response = await axios.post("http://127.0.0.1:8000/api/token/", {
-          username,
-          password,
-        });
-        const token = response.data.access;
-        setAuthToken(token);
-        localStorage.setItem("token", token);
-        console.log(authToken);
-
-        navigate("/");
-      } else {
-        const response = await axios.post("http://127.0.0.1:8000/auth/users/", {
-          username,
-          email,
-          password,
-        });
-
-        if (response.status === 201) {
-          setOption(!option);
-        }
-      }
-    } catch (error) {
-      console.error("Authentication failed:", error);
+    if (option) {
+      login(username, password);
+    } else {
+      signup(username, email, password);
     }
   };
 
   return (
     <>
       <Navbar />
-      {authToken === null ? (
+      {accessToken === null ? (
         <div className="login-container">
           <h1>{option ? "Login" : "Register"}</h1>
           <form onSubmit={handleSubmit} method="POST">
