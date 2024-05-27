@@ -1,0 +1,38 @@
+/* ActivationPage.css */
+
+.activation-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #121212; /* Dark background color */
+}
+
+.activation-page-content {
+  text-align: center;
+  color: #ffffff; /* White text color */
+}
+
+.activation-page-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.activation-page-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.activation-button {
+  background-color: #ff4500; /* Orange button color */
+  color: #ffffff; /* White text color */
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.activation-button:hover {
+  background-color: #ff7f50; /* Lighter orange color on hover */
+}

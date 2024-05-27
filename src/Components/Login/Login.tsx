@@ -71,8 +71,8 @@ const Login = () => {
           </p>
         </div>
       ) : (
-        <div>
-          <h1>Are you sure you want to Logout?</h1>
+        <div className="logout-container">
+          <h1>Are you sure you want to Logout{username}?</h1>
           <button onClick={handleLogout}>Yes</button>
           <button onClick={() => navigate("/")}>Cancel</button>
         </div>

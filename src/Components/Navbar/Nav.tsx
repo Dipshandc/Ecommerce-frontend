@@ -19,9 +19,10 @@ const Navbar = () => {
         <li>
           <Link to="/cart">Cart</Link>
         </li>
+
         {localStorage.getItem("access") != null ? (
           <li>
-            <Link to="/login-register">Logout</Link>
+            <Link to="/Profile">Account</Link>
           </li>
         ) : (
           <li>

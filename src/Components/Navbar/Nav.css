@@ -3,13 +3,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color:#444;
+  background-color: #444;
   padding: 10px 20px;
   box-shadow: 0 2px 4px rgba(255, 253, 253, 0.1);
 }
 
 .navbar-logo img {
- width: 40px;
+  width: 40px;
 }
 
 .navbar-links {
@@ -23,10 +23,10 @@
 }
 
 .navbar-links li a {
-  color:white;
+  color: white;
   text-decoration: none;
 }
 
 .navbar-links li a:hover {
-  color: #007bff;
+  color: #c16efd;
 }

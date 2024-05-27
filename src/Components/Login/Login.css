@@ -73,3 +73,23 @@ body {
   text-decoration: underline;
   cursor: pointer;
 }
+.logout-container button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.logout-container button:last-child {
+  background-color: #f44336;
+}
+.logout-container button:last-child:hover {
+  background-color: #c9352a;
+}
+
+.logout-container button:hover {
+  background-color: #388e3c;
+}

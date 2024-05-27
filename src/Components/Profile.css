@@ -1,0 +1,99 @@
+.profile-container {
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  background-color: #333;
+  color: #fff;
+}
+
+/* Header styles */
+.profile-header {
+  margin-top: 0;
+  text-align: center;
+}
+
+/* Info styles */
+.profile-info {
+  margin-bottom: 20px;
+}
+
+/* Row styles */
+.profile-row {
+  margin-bottom: 15px;
+}
+
+.profile-row label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.profile-row input[type="text"] {
+  width: calc(100% - 10px);
+  padding: 8px;
+  border: 1px solid #777;
+  border-radius: 5px;
+  background-color: #555;
+  color: #fff;
+}
+
+/* Actions styles */
+.profile-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.profile-actions button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.profile-actions button:last-child {
+  background-color: #f44336;
+}
+.profile-actions button:last-child:hover {
+  background-color: #c9352a;
+}
+
+.profile-actions button:hover {
+  background-color: #388e3c;
+}
+
+.profile-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.profile-logout {
+  color: black;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px 0;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: inherit;
+}
+.profile-container a {
+  text-decoration: none;
+}
+.profile-container a:hover {
+  text-decoration: underline;
+}
+
+.profile-logout:hover {
+  background-color: #dedede;
+}

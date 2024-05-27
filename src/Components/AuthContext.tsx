@@ -7,7 +7,6 @@ import {
 } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
 interface AuthContextType {
   accessToken: string | null;
   refreshToken: string | null;
@@ -33,6 +32,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [refreshToken, setRefreshToken] = useState<string | null>(
     localStorage.getItem("refresh")
   );
+
   const navigate = useNavigate();
 
   const login = async (username: string, password: string) => {
@@ -63,7 +63,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       });
 
       if (response.status === 201) {
-        navigate("/"); // Redirect to home page or login page
+        navigate("/");
       }
     } catch (error) {
       console.error("Signup failed:", error);
@@ -90,6 +90,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
         localStorage.setItem("access", token.access);
         localStorage.setItem("refresh", token.refresh);
+        console.log("Refreshed");
       }
     } catch (error) {
       console.error("Failed to refresh access token:", error);
